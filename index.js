@@ -82,7 +82,7 @@ app.post('/makehtml', (req, res) => {
 						
 				},function(data,err)
 				{
-					res.send('https://hosthtml.herokuapp.com/'+newshort);
+					res.send('https://hosthtml.tk/'+newshort);
 				});
 				client.close();
 				
