@@ -58,35 +58,43 @@ app.get('/:id', (req, res) => {
 app.post('/makehtml', (req, res) => {
 	
 	var content=req.body.content;
-	var t=2;
-	var temp=getrandom(t);
-	while(CheckAvailability(temp)==0)
+	if(content==undefined || content==null || content=="" || content==" " || content=='')
 	{
-		//Increasing the size of Random URL
-		temp=getrandom(t++);
+		res.send('ERR1');
 	}
-	newshort=temp;
-	
-	//Just Entering the Data in DB.
-	MongoClient.connect(url,{ useNewUrlParser: true },function(err,client){
-		
-				const db = client.db(dbName);
-				const collection = db.collection('pages');
+	else
+	{
+		var t=2;
+		var temp=getrandom(t);
+		while(CheckAvailability(temp)==0)
+		{
+			//Increasing the size of Random URL
+			temp=getrandom(t++);
+		}
+		newshort=temp;
+
+		//Just Entering the Data in DB.
+		MongoClient.connect(url,{ useNewUrlParser: true },function(err,client){
+			
+			const db = client.db(dbName);
+			const collection = db.collection('pages');
+			
+			collection.insertOne(
+			{
 				
-				collection.insertOne(
-				{
+				content: content,
+				linkkey:newshort,
+				DateOfCreation:new Date().toLocaleString()
 					
-					content: content,
-					linkkey:newshort,
-					DateOfCreation:new Date().toLocaleString()
-						
-				},function(data,err)
-				{
-					res.send('https://hosthtml.tk/'+newshort);
-				});
-				client.close();
-				
+			},function(data,err)
+			{
+				res.send('https://hosthtml.tk/'+newshort);
 			});
+			client.close();
+					
+		});
+
+	}
 		
 	
 });
