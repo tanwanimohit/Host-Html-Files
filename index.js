@@ -16,13 +16,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 //URL Of MongoDB Server.
-const url = "mongodb+srv://admin:05030503@cluster0-m7pgy.mongodb.net/test?retryWrites=true&w=majority";
+const url = process.env.db;
 
 //Mongo Client Variable
 const MongoClient = require('mongodb').MongoClient;
 
 //Database Name.
-const dbName = "HTML";
+const dbName = process.env.dbname;
 	
 	
 app.get('/', (req, res) => {
