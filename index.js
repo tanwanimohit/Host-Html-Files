@@ -113,7 +113,7 @@ function CheckAvailability(temp)
 	MongoClient.connect(url,{ useNewUrlParser: true },function(err,client){
 		
 				const db = client.db(dbName);
-				const collection = db.collection('links');
+				const collection = db.collection('pages');
 				
 				collection.find({ linkkey : temp }).toArray(function(err,docs)
 				{
