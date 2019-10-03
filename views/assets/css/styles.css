@@ -1,0 +1,13 @@
+textarea#content {
+    font-family: monospace;
+    background-color: #253239;
+    color: #B5BFC7;
+    line-height: 2;
+    box-shadow: -5px 5px 2px rgba(0,0,0,0.2);
+}
+
+@media (min-width: 768px) {
+    textarea#content {
+        min-height: 500px !important;
+    }
+}
