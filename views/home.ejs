@@ -11,19 +11,8 @@
     <link rel="stylesheet" href="assets/css/Highlight-Clean.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/code.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-	<style>
-		#content
-		{
-			width: 80%;
-		}
-		@media screen and (max-width: 450px) {
-			#content
-			{
-				width:90%;
-			}
-		}
-	</style>
 </head>
 
 <body class="text-center">
@@ -32,7 +21,7 @@
             <div class="intro">
                 <h1 class="text-center" style="font-family: 'Noto Sans JP', sans-serif; color:DodgerBlue; font-weight:bold;x "> &lt; &#47; &gt; Host.html </h1>
                 <p class="text-center">Host your HTML Files for Free, just put your content below and hit enter, you will get the unique URL use it to see your live web page.</p>
-            </div><textarea class="form-control-lg bounce animated" id="content" placeholder="Put your Code here.." name="code" style="height: 60%;min-height: 300px;margin: 10px;"></textarea>
+            </div><textarea class="form-control-lg bounce animated" id="content" placeholder="Start typing your code here!" name="code" style="height: 60%;min-height: 300px;margin: 10px;"></textarea>
             <div class="buttons"><a class="btn btn-primary" role="button" href="javascript:make()">Upload code</a>
 			<button class="btn btn-light" onclick="load()" type="button">Load Sample Code</button>
 				<center><h5 id="url" style="margin:10px;"></h5></center>
@@ -41,41 +30,7 @@
     </div>
 	
 	<script>
-		
-	function make()
-	{
-		var content=document.getElementById("content").value;
-		if(content!="")
-		{
-			$.post('/makehtml',{content:content},function(data,status){							
-				if(data=="ERR1")
-				{	
-					document.getElementById("url").innerHTML="Ahh! you forget to write the code";
-				}
-				else
-				{
-					document.getElementById("url").innerHTML="Your Webpage is live @ <a style='font-color:dodgerblue; text-decoration:none;' href='"+data+"' >"+data+"</a>" ;
-				}
-			});
-		}
-		else
-		{
-			alert("Ahh! you forget to write the code");
-		}
-		
-	}
-	function load()
-	{
-		document.getElementById("content").value="<!DOCTYPE html>\r\n<html>\r\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n<head>\r\n<title>My Web Page<\/title>\r\n<\/head>\r\n<style>\r\n\r\n<\/style>\r\n<body>\r\n\r\n\r\n<script>\r\n\r\n<\/script>\r\n<\/body>\r\n<\/html>\r\n";
-	}
-	function Copy()
-	{
-	
-		var copyText = document.getElementById("content");
-		copyText.select();
-		document.execCommand("copy");
-		document.getElementById("copybtn").value="Copied";
-	}
+
 	</script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>

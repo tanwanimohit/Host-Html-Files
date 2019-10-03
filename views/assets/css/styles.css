@@ -1,0 +1,10 @@
+#content
+{
+    width: 80%;
+}
+@media screen and (max-width: 450px) {
+    #content
+    {
+        width:90%;
+    }
+}
