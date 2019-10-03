@@ -20,6 +20,7 @@ Host your HTML Files for Free, just enter your content which creates a unique UR
 4. `git fetch`
 5. `git rebase origin/master`
 6. `git push origin HEAD`
+7. Create a pull request
 ### IF CURRENT BRANCH IS BEHIND
 #### Option 1
 1. `git rebase origin/<current branch>`
