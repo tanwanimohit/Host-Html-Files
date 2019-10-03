@@ -2,9 +2,15 @@
   "name": "html-uploader",
   "version": "1.0.0",
   "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tanwanimohit/Host-Html-Files.git"
+  },
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "docker": "docker-compose up -d",
+    "docker:dev": "docker-compose build && docker-compose up"
   },
   "author": "",
   "license": "ISC",
