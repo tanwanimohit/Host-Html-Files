@@ -2,7 +2,7 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  font-family: 'Roboto Mono', monospaced;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .highlight-clean {
@@ -15,8 +15,12 @@ div.intro > h1 {
 }
 
 textarea {
-  font-family: 'Roboto Mono', monospaced;
+  font-family: 'Roboto Mono', monospace;
   border-radius: 3px;
   font-size: 12px;
   padding: 5px;
+}
+
+#url {
+  color: white;
 }
