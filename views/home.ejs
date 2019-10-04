@@ -6,12 +6,13 @@
     <meta name="theme-color" content="DodgerBlue">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Host Html</title>
-	<link href="https://fonts.googleapis.com/css?fami	ly=Noto+Sans+JP:400,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/Highlight-Clean.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/ace.js"></script>
 	<style>
 		#content
 		{
@@ -32,7 +33,8 @@
             <div class="intro">
                 <h1 class="text-center" style="font-family: 'Noto Sans JP', sans-serif; color:DodgerBlue; font-weight:bold;x "> &lt; &#47; &gt; Host.html </h1>
                 <p class="text-center">Host your HTML Files for Free, just put your content below and hit enter, you will get the unique URL use it to see your live web page.</p>
-            </div><textarea class="form-control-lg bounce animated" id="content" placeholder="Put your Code here.." name="code" style="height: 60%;min-height: 300px;margin: 10px;"></textarea>
+			</div>
+			<div class="form-control-lg bounce animated" id="content" name="code" style="height: 60%;min-height: 300px;margin: 10px auto 10px auto;border: 1px solid #7d8285">Your code here...</div>
             <div class="buttons"><a class="btn btn-primary" role="button" href="javascript:make()">Upload code</a>
 			<button class="btn btn-light" onclick="load()" type="button">Load Sample Code</button>
 				<center><h5 id="url" style="margin:10px;"></h5></center>
@@ -41,10 +43,16 @@
     </div>
 	
 	<script>
+
+	let editor = ace.edit("content");
+	editor.setTheme("ace/theme/eclipse");
+	editor.setOption("fontSize", 12);
+	editor.setOption("printMarginColumn", "60");
+	editor.session.setMode("ace/mode/html");
 		
 	function make()
 	{
-		var content=document.getElementById("content").value;
+		var content=editor.getValue();
 		if(content!="")
 		{
 			$.post('/makehtml',{content:content},function(data,status){							
@@ -54,7 +62,7 @@
 				}
 				else
 				{
-					document.getElementById("url").innerHTML="Your Webpage is live @ <a style='font-color:dodgerblue; text-decoration:none;' href='"+data+"' >"+data+"</a>" ;
+					document.getElementById("url").innerHTML="Your Webpage is live!<br> <a style='font-color:dodgerblue; text-decoration:none;' href='"+data+"' >"+data+"</a>" ;
 				}
 			});
 		}
@@ -66,7 +74,7 @@
 	}
 	function load()
 	{
-		document.getElementById("content").value="<!DOCTYPE html>\r\n<html>\r\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n<head>\r\n<title>My Web Page<\/title>\r\n<\/head>\r\n<style>\r\n\r\n<\/style>\r\n<body>\r\n\r\n\r\n<script>\r\n\r\n<\/script>\r\n<\/body>\r\n<\/html>\r\n";
+		editor.setValue("<!DOCTYPE html>\r\n<html>\r\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n<head>\r\n<title>My Web Page<\/title>\r\n<\/head>\r\n<style>\r\n\r\n<\/style>\r\n<body>\r\n\r\n\r\n<script>\r\n\r\n<\/script>\r\n<\/body>\r\n<\/html>\r\n");
 	}
 	function Copy()
 	{
