@@ -1,0 +1,26 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.highlight-clean {
+  background: transparent;
+  width: 100%;
+}
+
+div.intro > h1 {
+  font-weight: 200;
+}
+
+textarea {
+  font-family: 'Roboto Mono', monospace;
+  border-radius: 3px;
+  font-size: 12px;
+  padding: 5px;
+}
+
+#url {
+  color: white;
+}

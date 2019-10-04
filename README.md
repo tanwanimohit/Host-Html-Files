@@ -2,6 +2,7 @@
 HTML Page Uploader
 
 Host your HTML Files for Free, just enter your content which creates a unique URL with your live web page!
+Currently live at https://www.hosthtml.tk/
 
 # Quick Start
 1. Clone the git repo — `git clone https://github.com/tanwanimohit/Host-Html-Files.git`
@@ -31,3 +32,4 @@ Host your HTML Files for Free, just enter your content which creates a unique UR
 2. `git fetch`
 3. `git rebase origin/master`
 4. `git checkout -b <new branch>` to start working on a new branch
+
