@@ -46,7 +46,7 @@
 
 	let editor = ace.edit("content");
 	editor.setTheme("ace/theme/eclipse");
-	editor.setOption("fontSize", 12);
+	editor.setOption("fontSize", 13);
 	editor.setOption("printMarginColumn", "60");
 	editor.session.setMode("ace/mode/html");
 		
@@ -74,7 +74,7 @@
 	}
 	function load()
 	{
-		editor.setValue("<!DOCTYPE html>\r\n<html>\r\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n<head>\r\n<title>My Web Page<\/title>\r\n<\/head>\r\n<style>\r\n\r\n<\/style>\r\n<body>\r\n\r\n\r\n<script>\r\n\r\n<\/script>\r\n<\/body>\r\n<\/html>\r\n");
+		editor.setValue("<!DOCTYPE html>\r\n<html>\r\n<head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n\r\n<title>My Web Page<\/title>\r\n<style>\r\n\r\n<\/style>\r\n<\/head>\r\n<body>\r\n\r\n\r\n<script>\r\n\r\n<\/script>\r\n<\/body>\r\n<\/html>\r\n");
 	}
 	function Copy()
 	{
