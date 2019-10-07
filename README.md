@@ -13,6 +13,12 @@ Currently live at https://www.hosthtml.tk/
     - If using node, in the project folder using terminal, run `npm run start`
     - If using yarn, in the project folder using terminal, run `yarn start`
 
+# Quickstart using Docker
+1. Install [docker](https://docs.docker.com/install/#supported-platforms) and [docker-compose](https://docs.docker.com/compose/install/) on your system
+2. Clone the git repo - `git clone https://github.com/tanwanimohit/Host-Html-Files.git`
+3. - Run `npm run docker` to start the containers.
+   - Run `npm run docker:dev` to force a rebuild and start the containers.
+
 # Git Workflow
 ### SIMPLE PUSH
 1. `git status`
