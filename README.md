@@ -13,6 +13,8 @@ Currently live at https://www.hosthtml.tk/
     - If using node, in the project folder using terminal, run `npm run start`
     - If using yarn, in the project folder using terminal, run `yarn start`
 
+**You need to remove env variables and need to add your local or any other mongo db url and db name on `line 19 and 25` Else you can use docker it will automatically do that.**  
+
 # Quickstart using Docker
 1. Install [docker](https://docs.docker.com/install/#supported-platforms) and [docker-compose](https://docs.docker.com/compose/install/) on your system
 2. Clone the git repo - `git clone https://github.com/tanwanimohit/Host-Html-Files.git`
